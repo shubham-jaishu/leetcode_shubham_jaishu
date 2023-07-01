@@ -7,15 +7,7 @@ using namespace std;
 class Solution {
 public:
     int setBits(int n) {
-        int res = 0;
-        while (n > 0) {
-            // Check if the last bit is set or not
-            if (n % 2 != 0)
-                res++;
-            // Remove the last bit
-            n = n / 2;
-        }
-        return res;
+        return __builtin_popcount(n);
     }
 };
 
