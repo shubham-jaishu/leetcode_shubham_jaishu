@@ -7,25 +7,18 @@ using namespace std;
 
 // } Driver Code Ends
     
-
 class Solution{
-    //Function to find the leaders in the array.
     public:
-    vector<int> leaders(int a[], int n)
-    {
-        // Code here
-        vector<int> ans;
-        int l = a[n-1];
-        for(int i=n-1;i>=0;i--)
-        {
-            if(a[i] >= l)
-            {
-                l=a[i];
-                ans.push_back(a[i]);
+    vector<int> leaders(int a[] , int n){
+        vector<int>v;
+        int mx=INT_MIN;
+        for(int i=n-1; i>=0; i--){
+            if(a[i]>=mx){
+                v.push_back(a[i]);
+                mx=a[i];
             }
         }
-        reverse(ans.begin(),ans.end());
-        return ans;
+        return {v.rbegin(),v.rend()};
     }
 };
 
