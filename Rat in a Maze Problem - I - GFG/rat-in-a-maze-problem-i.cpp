@@ -30,9 +30,9 @@ class Solution{
     vector<string> findPath(vector<vector<int>>&mat , int n){
         vector<vector<int>>v(n,vector<int>(n,0));
         string s;
-        if(mat[0][0]==0 || mat[n-1][n-1]==0){
-            return ans;
-        }
+        // if(mat[0][0]==0 || mat[n-1][n-1]==0){
+        //     return ans;
+        // }
         solve(mat , v , 0 , 0 , s);
         sort(ans.begin(),ans.end());
         return ans;
