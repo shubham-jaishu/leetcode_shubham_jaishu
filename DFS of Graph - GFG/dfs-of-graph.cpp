@@ -5,21 +5,20 @@ using namespace std;
 // } Driver Code Ends
 class Solution {
   public:
-    vector<int>ans;
-    void solve(vector<int>adj[] , vector<int>&v , int i){
+    void solve(vector<int>adj[] , vector<int>&v , int i , vector<int>&ans){
         v[i]=1;
         ans.push_back(i);
         for(auto j:adj[i]){
             if(!v[j]){
                 v[j]=1;
-                solve(adj , v , j);
+                solve(adj , v , j , ans);
             }
         }
     }
   
     vector<int> dfsOfGraph(int V , vector<int>adj[]){
-        vector<int>v(V+1,0);
-        solve(adj , v , 0);
+        vector<int>v(V+1,0) , ans;
+        solve(adj , v , 0 , ans);
         return ans;
     }
 };
