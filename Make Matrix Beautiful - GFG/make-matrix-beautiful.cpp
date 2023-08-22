@@ -4,28 +4,21 @@ using namespace std;
 
 // } Driver Code Ends
 
-
-class Solution
-{
+class Solution{
     public:
-    //Function to find minimum number of operations that are required 
-    //to make the matrix beautiful.
-    int findMinOpeartion(vector<vector<int> > matrix, int n)
-    {
-        int mx=INT_MIN,total=0;
-        
-        for(int i=0;i<n;i++){
-            int row_sum=0,col_sum=0;
-            for(int j=0;j<n;j++){
-                row_sum+=matrix[i][j];
-                col_sum+=matrix[j][i];
-                total+=matrix[i][j];
+    int findMinOpeartion(vector<vector<int>>mat , int n){
+        int mx=INT_MIN , t=0;
+        for(int i=0; i<n; i++){
+            int r=0 , c=0;
+            for(int j=0; j<n; j++){
+                r+=mat[i][j];
+                c+=mat[j][i];
+                t+=mat[i][j];
             }
-            mx=max(mx,max(row_sum,col_sum));
+            mx=max(mx,max(r,c));
         }
-        
-        return (n*mx-total);
-    }
+        return mx*n-t;
+    } 
 };
 
 //{ Driver Code Starts.
