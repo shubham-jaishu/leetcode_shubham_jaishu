@@ -10,13 +10,8 @@ using namespace std;
 class Solution{
 public:
     int mthHalf(int n , int m){
-        m--;
-        int sum=n;
-        while(m){
-            sum=sum>>1;
-            m--;
-        }
-        return sum;
+        while(--m) n>>=1;
+        return n;
     }
 };
 
