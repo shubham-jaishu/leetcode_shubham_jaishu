@@ -9,8 +9,7 @@ using namespace std;
 class Solution {
   public:
     string canJump(long long n){
-        int x = __builtin_popcount(n);
-        if(x==1){
+        if(__builtin_popcount(n)==1){
             return "True";
         }
         return "False";
