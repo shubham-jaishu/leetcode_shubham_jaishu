@@ -8,11 +8,9 @@ using namespace std;
 class Solution{
 public:	
 	int divisibleBy4 (string n){
-        char s1 = n[n.size()-2];
-        char s2 = n[n.size()-1];
-        int x = s1-'0';
-        int y = s2-'0';
-        x = x*10 + y;
+        int x = n[n.size()-2]-'0';
+        int y = n[n.size()-1]-'0';
+        x=x*10+y;
         if(x%4==0){
             return true;
         }
