@@ -5,10 +5,10 @@ using namespace std;
 
 
 // } Driver Code Ends
-
+//User function template for C++
 class Solution{
 public:	
-    int isPalindrome(string s){
+	int isPalindrome(string s){
 	    int i=0 , j=s.size()-1;
 	    while(s[i]==s[j] && i<j){
 	        i++;
@@ -19,7 +19,6 @@ public:
 	    }
 	    return true;
 	}
-
 };
 
 //{ Driver Code Starts.
