@@ -82,59 +82,43 @@ Node* buildTree(string str)
 
 
 // } Driver Code Ends
-//User function Template for C++
 
-/*Structure of the Node of the BST is as
-struct Node
-{
-    int data;
-    struct Node *left;
-    struct Node *right;
-
-    Node(int val) {
-        data = val;
-        left = right = NULL;
-    }
-};
-*/
-
-class Solution
-{
-public:
-    int c;
-    int chk(Node*root , Node*root2 , int x){
-        if(!root){
-            return 0;
-        }
-        chk(root->left , root2 , x);
-        if(fet(root2,x-root->data)){
-            c++;
-        }
-        chk(root->right , root2 , x);
-    }
+class Solution{
+    public:
     
-    bool fet(Node*root , int val){
-        if(!root){
-            return false;
+        bool chk(Node*root , int x){
+            if(!root){
+                return false;
+            }
+            if(root->data==x){
+                return true;
+            }
+            int dx = false , dy=false;
+            if(x<root->data){
+                dx = chk(root->left , x);
+            }
+            else if(x>root->data){
+                dy = chk(root->right , x);
+            }
+            return dx || dy;
         }
-        if(val==root->data){
-            return true;
+    
+        void solve(Node*root1 , Node*root2 , int x , int &c){
+            if(!root1){
+                return ;
+            }
+            solve(root1->left , root2 , x , c);
+            if(chk(root2 , x-root1->data)){
+                c++;
+            }
+            solve(root1->right , root2 , x , c);
         }
-        bool x = false , y = false;
-        if(val>root->data){
-            x = fet(root->right , val);
+    
+        int countPairs(Node*root1 , Node*root2 , int x){
+            int c=0;
+            solve(root1 , root2 , x , c);
+            return c;
         }
-        else if(val<root->data){
-            y = fet(root->left , val);
-        }
-        return x || y;
-    }
-
-    int countPairs(Node*root1 , Node*root2 , int x){
-        c=0;
-        chk(root1 , root2 , x);
-        return c;
-    }
 };
 
 
