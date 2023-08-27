@@ -14,10 +14,10 @@ class Solution{
         }
         vector<int>v;
         for(int i=0; i<n; i++){
-            if(mp[a[i]]!=0){
+            if(mp[a[i]]>=1){
                 v.push_back(a[i]);
                 mp[a[i]]=0;
-                mp.erase(mp[a[i]]);
+                // mp.erase(mp[a[i]]);
             }
         }
         return v;
