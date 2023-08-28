@@ -54,8 +54,22 @@ int main() {
 }
 // } Driver Code Ends
 
-    Node *removeDuplicates(Node*head){
-        Node*temp=head;
+
+/*
+struct Node {
+  int data;
+  struct Node *next;
+  Node(int x) {
+    data = x;
+    next = NULL;
+  }
+};*/
+
+//Function to remove duplicates from sorted linked list.
+Node *removeDuplicates(Node *head)
+{
+ // your code goes here
+ Node*temp=head;
         while(temp->next){
             if(temp->next->data==temp->data){
                 temp->next=temp->next->next;
@@ -65,4 +79,4 @@ int main() {
             }
         }
         return head;
-    }
+}
