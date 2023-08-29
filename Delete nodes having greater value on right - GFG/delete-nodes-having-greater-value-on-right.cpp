@@ -28,10 +28,27 @@ void print(Node *root)
 
 
 // } Driver Code Ends
+/*
 
-class Solution{
+The structure of linked list is the following
+
+struct Node
+{
+    int data;
+    Node* next;
+    
+    Node(int x){
+        data = x;
+        next = NULL;
+    }
+};
+*/
+class Solution
+{
     public:
-    Node *compute(Node*head){
+    Node *compute(Node *head)
+    {
+        // your code goes here
         vector<int>v,ans;
         while(head){
             v.push_back(head->data);
