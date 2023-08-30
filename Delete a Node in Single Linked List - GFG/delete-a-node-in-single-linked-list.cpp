@@ -74,15 +74,8 @@ int main()
         if(x==1){
             return head->next;
         }
-        int c=1;
-        while(temp->next){
-            c++;
-            if(c==x){
-                temp->next=temp->next->next;
-            }
-            else{
-                temp=temp->next;
-            }
-        }
-        return head;
+        x-=2;
+        while(x--) head=head->next;
+        head->next=head->next->next;
+        return temp;
     }
