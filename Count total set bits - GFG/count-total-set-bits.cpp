@@ -11,11 +11,11 @@ class Solution{
     public:
     
     int mx(int n){
-        int c=0;
-        while((1<<c)<=n){
-            c++;
+        int i=0;
+        while((1<<i)<=n){
+            i++;
         }
-        return c-1;
+        return i-1;
     }
     
     int countSetBits(int n){
