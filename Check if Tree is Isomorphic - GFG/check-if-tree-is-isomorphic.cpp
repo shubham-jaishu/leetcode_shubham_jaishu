@@ -93,19 +93,20 @@ struct Node {
 class Solution{
   public:
     // Return True if the given trees are isomotphic. Else return False.
-    bool isIsomorphic(Node*root1 , Node*root2){
-        if(!root1 && !root2){
+   	bool isIsomorphic(Node *root1,Node *root2)
+    {
+    	//add code here.
+        if(root1==nullptr and root2==nullptr) 
             return true;
-        }
-        if(!root1 || !root2){
+        if(root1==nullptr or root2==nullptr) 
             return false;
-        }
-        if(root1->data!=root2->data){
+        if(root1->data!=root2->data)
             return false;
-        }
-        bool x = isIsomorphic(root1->left , root2->left) && isIsomorphic(root1->right , root2->right);
-        bool y = isIsomorphic(root1->left , root2->right) && isIsomorphic(root1->right , root2->left);
-        return x||y;
+        
+        return 
+            (isIsomorphic(root1->left,root2->left) and 		 	 	 	 	 	 isIsomorphic(root1->right,root2->right))
+            or
+            (isIsomorphic(root1->left,root2->right) and isIsomorphic(root1->right,root2->left));
     }
 };
 
