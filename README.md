@@ -29,6 +29,11 @@ Explore my coding achievements and profiles on various platforms:
 
 ---
 
+## Screenshots
+![Screenshot 1](./ss1.png)
+
+---
+
 ## Technologies Used
 - **Languages:** C++, Python, JavaScript, Java
 - **Platforms:** LeetCode, CodeChef, GFG, Coding Ninja, Codeforces
