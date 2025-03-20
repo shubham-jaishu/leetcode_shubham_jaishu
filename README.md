@@ -46,12 +46,12 @@ Explore my coding achievements and profiles on various platforms:
 ### Steps
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/dsa-solutions.git
+   git clone https://github.com/shubham-jaishu/leetcode_shubham_jaishu.git
    ```
 
 2. Navigate to the repository:
    ```bash
-   cd dsa-solutions
+   cd leetcode_shubham_jaishu
    ```
 
 3. Open the required code files using any text editor or IDE:
